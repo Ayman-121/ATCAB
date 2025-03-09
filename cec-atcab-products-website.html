@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEC - Exclusive ATCAB Products Distributor</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <style>
+
+        #logoo{
+            max-width: 400px;
+        }
+
+
+
+        :root {
+            --primary: #0a4d8c;
+            --secondary: #19a0e0;
+            --accent: #ffc107;
+            --text-dark: #333;
+            --text-light: #f5f5f5;
+            --bg-light: #ffffff;
+            --bg-dark: #f5f7fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        html{
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(10, 77, 140, 0.8), rgba(10, 77, 140, 0.8)), url('/api/placeholder/1200/400') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6a800;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 25%;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .certifications {
+            background-color: var(--bg-dark);
+        }
+        
+        .cert-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .cert-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .product-desc {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .product-features {
+            margin-bottom: 1rem;
+        }
+        
+        .product-features li {
+            margin-left: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .product-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .product-btn:hover {
+            background-color: #083b6d;
+        }
+        
+        .product-details {
+            border-top: 1px solid #eee;
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+        
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-spec {
+            background-color: var(--bg-dark);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .product-model {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact {
+            background-color: var(--bg-dark);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #083b6d;
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .category-btn {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        .contact-form .contact-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem 1rem 0.5rem 0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form .contact-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-form .contact-link i {
+            margin-right: 8px;
+        }
+        
+        .contact-form .email-link {
+            background-color: var(--primary);
+        }
+        
+        .contact-form .call-link {
+            background-color: var(--accent);
+            color: var(--text-dark);
+        }
+        
+        .contact-form .call-link:hover {
+            background-color: #e6a800;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container logo-container">
+            <div class="logo">CEC<span>ATCAB</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Exclusive Distributor of ATCAB Products in Saudi Arabia</h1>
+            <p>Construction Experience Contracting Est. (CEC) is proud to be the sole authorized distributor of high-quality ATCAB cable lugs and electrical components manufactured by Atlas Metal Industries in Saudi Arabia.</p>
+            <a href="#products" class="btn">View Products</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Partner for Electrical Components</h3>
+                    <p>Construction Experience Contracting Est. (CEC) is a registered Saudi Aramco vendor (Vendor Code No. 10109275) specializing in electrical, mechanical, and civil contracting works.</p>
+                    <p>We have obtained the exclusive agency for ATCAB products in Saudi Arabia, manufactured by Atlas Metal Industries - a renowned manufacturer of high-quality electrical components.</p>
+                    <p>Our commitment to quality, safety, and customer satisfaction drives us to provide only the best products at competitive prices. With our ISO 9001, ISO 45001, and ISO 14001 certified management systems, we ensure consistent quality and reliability in all our offerings.</p>
+                </div>
+                <div class="about-image">
+                    <img src="imgs/logo.png" alt="CEC Company Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Certifications</h2>
+            </div>
+            <div class="cert-container">
+                <div class="cert-card">
+                    <div class="cert-icon">★</div>
+                    <h3>UL Certified</h3>
+                    <p>ATCAB products are UL certified (Certificate No. E539813) ensuring compliance with global safety standards.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">★</div>
+                    <h3>ISO 9001</h3>
+                    <p>Our quality management system is ISO 9001 certified, ensuring consistent quality in all our processes.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">★</div>
+                    <h3>2-Year Warranty</h3>
+                    <p>All products come with a standard 2-year warranty against defects in design or workmanship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="cable-glands">Cable Glands</button>
+                <button class="category-btn" data-category="adaptors">Adaptors</button>
+                <button class="category-btn" data-category="stop-plugs">Stop Plugs</button>
+                <button class="category-btn" data-category="cable-lugs">Cable Lugs</button>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Light Duty Cable Lugs - Economy Series -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Light Duty Cable Lugs - Economy Series.png" alt="Light Duty Cable Lugs - Economy Series">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Light Duty Cable Lugs - Economy Series</h3>
+                        <p class="product-desc">Durable lugs designed for light duty applications with optimized performance.</p>
+                        <ul class="product-features">
+                            <li>Inspection hole to ensure full cable insertion</li>
+                            <li>Tin plated copper for improved conductivity</li>
+                            <li>Annealed material for optimal crimping</li>
+                            <li>Chamfered mouth for easy cable insertion</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATE</div>
+                            <div class="product-specs">
+                                <span class="product-spec">ETP-Copper</span>
+                                <span class="product-spec">Electro Tin Plated</span>
+                                <span class="product-spec">Metric Standard</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Economy Series 4 Hole Cable Lugs -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Economy Series 4 Hole Cable Lugs.png" alt="Economy Series 4 Hole Cable Lugs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Economy Series 4 Hole Cable Lugs</h3>
+                        <p class="product-desc">Heavy duty lugs specially designed for transformer applications.</p>
+                        <ul class="product-features">
+                            <li>Facilitates good heat dissipation</li>
+                            <li>Inspection hole ensures full cable insertion</li>
+                            <li>Tin plated copper to improve conductivity</li>
+                            <li>Annealed material optimizes crimping properties</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATE-4E</div>
+                            <div class="product-specs">
+                                <span class="product-spec">ETP-Copper</span>
+                                <span class="product-spec">Electro Tin Plated</span>
+                                <span class="product-spec">Heavy Duty</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Long Barrel Cable Lugs -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Long Barrel Cable Lugs.png" alt="Long Barrel Cable Lugs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Long Barrel Cable Lugs</h3>
+                        <p class="product-desc">Extended barrel design for superior wire grip and extra crimping security.</p>
+                        <ul class="product-features">
+                            <li>Longer barrel permits extra crimps for heavy duty loads</li>
+                            <li>Seamless, one-piece copper construction</li>
+                            <li>Tin plating ensures maximum conductivity</li>
+                            <li>Generous entrance chamfer for easy cable insertion</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATL</div>
+                            <div class="product-specs">
+                                <span class="product-spec">ETP-Copper</span>
+                                <span class="product-spec">Electro Tin Plated</span>
+                                <span class="product-spec">Extended Barrel</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Long Barrel Two Hole Cable Lugs -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Long Barrel Two Hole Cable Lugs.png" alt="Long Barrel Two Hole Cable Lugs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Long Barrel Two Hole Cable Lugs</h3>
+                        <p class="product-desc">Combines extended barrel with two-hole design for maximum security and stability.</p>
+                        <ul class="product-features">
+                            <li>Extended barrel for extra crimps on heavy duty loads</li>
+                            <li>Two-hole design prevents rotation or movement</li>
+                            <li>Annealed material optimizes crimping properties</li>
+                            <li>Precise stud holes as per metric standards</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATL-2E</div>
+                            <div class="product-specs">
+                                <span class="product-spec">ETP-Copper</span>
+                                <span class="product-spec">Electro Tin Plated</span>
+                                <span class="product-spec">Two-Hole Design</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Bimetallic Lugs -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Bimetallic Lugs.png" alt="Bimetallic Lugs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bimetallic Lugs</h3>
+                        <p class="product-desc">Dual-material lugs combining the benefits of both copper and aluminum.</p>
+                        <ul class="product-features">
+                            <li>For tapping into unbroken continuous main lines</li>
+                            <li>Works as a wire joint or two-way splice</li>
+                            <li>Wide wire range capability minimizes inventory needs</li>
+                            <li>Heavy wall, extruded high conductivity construction</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATB</div>
+                            <div class="product-specs">
+                                <span class="product-spec">ETP-Copper</span>
+                                <span class="product-spec">Electrolytic Aluminum</span>
+                                <span class="product-spec">Dual Material</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Aluminum Cable Lugs -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="imgs/Aluminum Cable Lugs.png" alt="Aluminum Cable Lugs">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Aluminum Cable Lugs</h3>
+                        <p class="product-desc">Lightweight aluminum lugs ideal for power distribution applications.</p>
+                        <ul class="product-features">
+                            <li>Significantly lower dead weight compared to copper</li>
+                            <li>Made of 99.5% pure aluminum</li>
+                            <li>Accepts variety of conductor forms</li>
+                            <li>Features straight knurling for secure connections</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATA</div>
+                            <div class="product-specs">
+                                <span class="product-spec">99.5% Pure Aluminum</span>
+                                <span class="product-spec">Lightweight</span>
+                                <span class="product-spec">Straight Knurling</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Compression Connectors -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Compression Connectors">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Compression Connectors</h3>
+                        <p class="product-desc">Reliable compression connections for various applications.</p>
+                        <ul class="product-features">
+                            <li>UL Listed (E539813)</li>
+                            <li>High mechanical strength</li>
+                            <li>Excellent electrical performance</li>
+                            <li>Easy installation</li>
+                        </ul>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+    
+                <!-- Special Application Connectors -->
+                <div class="product-card" data-category="cable-lugs">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Special Application Connectors">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Special Application Connectors</h3>
+                        <p class="product-desc">Custom connectors for specialized electrical needs.</p>
+                        <ul class="product-features">
+                            <li>UL Listed (E539813)</li>
+                            <li>Application-specific designs</li>
+                            <li>High-performance standards</li>
+                            <li>Customizable options</li>
+                        </ul>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+    
+                <!-- ATC Type Cable Cleat -->
+                <div class="product-card" data-category="cable-cleats">
+                    <div class="product-image">
+                        <img src="imgs/ATC Type Cable Cleat.png" alt="ATC Type Cable Cleat">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ATC Type Cable Cleat</h3>
+                        <p class="product-desc">High-pressure die-cast aluminum cable cleats for single cable applications with excellent range capacity.</p>
+                        <ul class="product-features">
+                            <li>Two bolt fixing system for secure mounting</li>
+                            <li>Suitable for cable diameters from 30mm to 160mm</li>
+                            <li>Ideal for both indoor and outdoor applications</li>
+                            <li>Available in natural aluminum or powder coating finish</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATC Series</div>
+                            <div class="product-specs">
+                                <span class="product-spec">Single Cable</span>
+                                <span class="product-spec">Aluminum</span>
+                                <span class="product-spec">-60°C to 150°C</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+    
+                <!-- ATFC Type Cable Cleat -->
+                <div class="product-card" data-category="cable-cleats">
+                    <div class="product-image">
+                        <img src="imgs/ATFC Type Cable Cleat.png" alt="ATFC Type Cable Cleat">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ATFC Type Cable Cleat</h3>
+                        <p class="product-desc">Die-cast aluminum cable cleats designed specifically for trefoil cable formations with wide range capability.</p>
+                        <ul class="product-features">
+                            <li>Two bolt fixing system for secure mounting</li>
+                            <li>Suitable for cable diameters from 15mm to 152mm</li>
+                            <li>Specialized design for trefoil cable arrangements</li>
+                            <li>Available in natural aluminum or powder coating finish</li>
+                        </ul>
+                        <div class="product-details">
+                            <div class="product-model">Model: ATFC Series</div>
+                            <div class="product-specs">
+                                <span class="product-spec">Trefoil Cable</span>
+                                <span class="product-spec">Aluminum</span>
+                                <span class="product-spec">-60°C to 150°C</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="product-btn">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><span class="contact-icon">📍</span> Faisalyiah Dist. Emma Abdulaziz St., Jeddah, Saudi Arabia</p>
+                        <p><span class="contact-icon">📮</span> P.O.BOX: 52748 - ZipCode: 21573</p>
+                        <p><span class="contact-icon">📱</span> +966 59 776 6887</p>
+                        <p><span class="contact-icon">✉️</span> m.khair@masftco.com</p>
+                    </div>
+                    <h3>Why Choose Us</h3>
+                    <ul>
+                        <li>Exclusive Saudi Arabian distributor</li>
+                        <li>UL certified products</li>
+                        <li>2-year product warranty</li>
+                        <li>Competitive pricing</li>
+                        <li>Registered Saudi Aramco vendor</li>
+                        <li>ISO certified management systems</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h3>Quick Contact</h3>
+                    <p>Reach out to us directly using one of the options below:</p>
+                    <div class="contact-links">
+                        <a href="mailto:m.khair@masftco.com" class="contact-link email-link"><i>✉️</i> Send Email</a>
+                        <a href="tel:+966597766887" class="contact-link call-link"><i>📱</i> Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>© 2025 Construction Experience Contracting Est. | Sole Distributor of ATCAB Products in Saudi Arabia</p>
+            <p>CR: 4030426168 | Saudi Aramco Vendor Code: 10109275</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get category from button data attribute
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide products based on category
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
